@@ -1,0 +1,82 @@
+/* Background with gradient */
+.total-jobs-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Cool blue gradient */
+    padding: 20px;
+    color: white;
+}
+
+/* Heading */
+.total-jobs-container h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Job list container */
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Individual job card with glassmorphism */
+.job-card {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Glass effect */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.job-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Job title */
+.job-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Job details */
+.job-card p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #f1f1f1;
+}
+
+/* No jobs message */
+.job-list p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.back-button {
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background: #ff1e3c;
+    transform: scale(1.05);
+}

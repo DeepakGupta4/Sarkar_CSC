@@ -1,0 +1,79 @@
+.job-list-container {
+  background: linear-gradient(135deg, #2f80ed, #56ccf2);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.job-list-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.job-list-container button {
+  background: #ff6b6b;
+  color: white;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 15px;
+}
+
+.job-list-container button:hover {
+  background: #ff4757;
+  transform: scale(1.05);
+}
+
+/* Job Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #1e3c72;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: rgba(69, 69, 96, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+/* Back Button */
+.back-button {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 15px;
+}
