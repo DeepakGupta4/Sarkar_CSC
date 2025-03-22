@@ -2,12 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-  "build": "npm install && npm --prefix frontend install && npm --prefix frontend run build && npm --prefix AdminPanel install && npm --prefix AdminPanel run build",
+ "scripts": {
+  "build": "npm install && npm --prefix ./frontend install && npm --prefix ./frontend run build && npm --prefix ./AdminPanel install && npm --prefix ./AdminPanel run build",
   "start": "node Backend/index.js",
   "deploy": "npm run build && npm start"
 },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
