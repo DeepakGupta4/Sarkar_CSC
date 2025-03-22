@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import "./Login.css";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "", role: "user" });
+  const [formData, setFormData] = useState({ email: "", password: "", role: "admin" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -17,20 +16,20 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+  
+    const adminEmail = "sarkarcscpatherwa@gmail.com"; // ✅ Corrected email format
+   const adminPassword = "sonu7565";
 
-    try {
-      const response = await axios.post("http://localhost:4000/api/auth/login", formData);
-      localStorage.setItem("token", response.data.token);
+  
+    if (formData.email === adminEmail && formData.password === adminPassword) {
+      // Store token in localStorage
+      localStorage.setItem("token", "fake-admin-token");
+      localStorage.setItem("role", "admin");
+  
       alert("Login successful!");
-
-      // Redirect user based on role
-      if (formData.role === "admin") {
-        navigate("/");
-      } else {
-        navigate("/");
-      }
-    } catch (err) {
-      setError(err.response?.data?.message || "Something went wrong");
+      navigate("/");
+    } else {
+      setError("Invalid email or password");
     }
   };
 
@@ -57,7 +56,6 @@ const Login = () => {
             required
           />
           <select name="role" className="input-field" onChange={handleChange} required>
-            <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
           <button type="submit" className="login-button">Login</button>

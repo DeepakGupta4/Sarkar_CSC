@@ -2,22 +2,16 @@ const express = require("express");
 const router = express.Router();
 const Job = require("../Model/jobModal");
 const Service = require("../Model/servicModal");
-const ServiceRequest = require("../Model/serviceRequest");
 
-// 🔹 Get Dashboard Stats
 router.get("/status", async (req, res) => {
   try {
     const totalJobs = await Job.countDocuments();
     const totalServices = await Service.countDocuments();
-    const newRequests = await ServiceRequest.countDocuments({ status: "pending" });
 
-    res.json({
-      totalJobs,
-      totalServices,
-      newRequests,
-    });
+    res.json({ totalJobs, totalServices });
   } catch (error) {
-    res.status(500).json({ error: "Error fetching dashboard status" });
+    console.error("❌ Error fetching stats:", error);
+    res.status(500).json({ error: "Failed to fetch dashboard data" });
   }
 });
 

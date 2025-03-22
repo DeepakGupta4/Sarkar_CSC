@@ -30,7 +30,7 @@ const AddJob = () => {
 
       if (response.status === 201) {
         alert("Job added successfully!");
-        navigate("/total-jobs");
+        navigate("/admin/jobs");
       }
     } catch (error) {
       alert(error.response?.data?.message || "Error adding job");

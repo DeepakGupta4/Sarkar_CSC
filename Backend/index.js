@@ -7,7 +7,6 @@ require("dotenv").config();
 const authRoute = require("../Backend/Routes/authRoute.js");
 const jobRoutes = require("../Backend/Routes/jobRoute.js");
 const serviceRoutes = require("../Backend/Routes/serviceRoute.js");
-const serviceRequestRoutes = require("../Backend/Routes/serviceRequest.js");
 const contactRoute = require("../Backend/Routes/contactRoute.js");
 const Service = require("./Model/servicModal.js");
 const allJobs = require("../Backend/Routes/allJobs.js");
@@ -22,7 +21,6 @@ app.use(cors());
 app.use("/api/auth", authRoute);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/services", serviceRoutes);
-app.use("/api/service-requests", serviceRequestRoutes);
 app.use("/api/contact", contactRoute);
 app.use("/api/all-jobs", allJobs);
 

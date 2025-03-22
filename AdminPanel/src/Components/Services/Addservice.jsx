@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import './ServiceList.css';
-// import '../Jobs/AdminJobs.css'
+import "./ServiceList.css"; // Import CSS for styling
 
 const AdminServices = () => {
   const [services, setServices] = useState([]);
   const [formData, setFormData] = useState({ name: "", price: "", description: "", icon: "🛠️" });
-  const [editingService, setEditingService] = useState(null); // 🔹 Edit Mode
+  const [editingService, setEditingService] = useState(null); // Edit Mode
 
   // Fetch services
   const fetchServices = async () => {
@@ -65,20 +64,20 @@ const AdminServices = () => {
   };
 
   return (
-    <div className="admin-container">
+    <div className="csc-admin-container">
       {/* Header */}
-      <div className="admin-header">
-        <h1 className="admin-h1">Manage Services</h1>
-        <Link to="/" className="back-button">Back to Dashboard</Link>
+      <div className="csc-header">
+        <h1 className="csc-title">🛠️ CSC Service Management</h1>
+        <Link to="/" className="csc-back-button">⬅ Back to Dashboard</Link>
       </div>
 
       {/* Service List */}
-      <div className="services-list">
+      <div className="csc-services-list">
         {services.map((service) => (
-          <div key={service._id} className="service-card">
+          <div key={service._id} className="csc-service-card">
             {editingService?._id === service._id ? (
               // Edit Mode
-              <div>
+              <div className="csc-edit-form">
                 <input
                   type="text"
                   value={editingService.name}
@@ -96,17 +95,19 @@ const AdminServices = () => {
                   onChange={(e) => setEditingService({ ...editingService, description: e.target.value })}
                   placeholder="Description"
                 />
-                <button className="save-btn" onClick={handleUpdateService}>✅ Save</button>
-                <button className="cancel-btn" onClick={() => setEditingService(null)}>❌ Cancel</button>
+                <button className="csc-save-btn" onClick={handleUpdateService}>✅ Save</button>
+                <button className="csc-cancel-btn" onClick={() => setEditingService(null)}>❌ Cancel</button>
               </div>
             ) : (
               // Normal Mode
-              <div>
+              <div className="csc-service-content">
                 <h3>{service.name}</h3>
-                <p>₹{service.price}</p>
-                <button className="delete-btn" onClick={() => handleDeleteService(service._id)}>❌ Delete</button>
-                <button className="edit-btn" onClick={() => handleEditService(service)}>✏ Edit</button>
-
+                <p>💰 ₹{service.price}</p>
+                <p>{service.description}</p>
+                <div className="csc-action-buttons">
+                  <button className="csc-delete-btn" onClick={() => handleDeleteService(service._id)}>❌ Delete</button>
+                  <button className="csc-edit-btn" onClick={() => handleEditService(service)}>✏ Edit</button>
+                </div>
               </div>
             )}
           </div>
@@ -114,10 +115,11 @@ const AdminServices = () => {
       </div>
 
       {/* Add Service Form */}
-      <div className="add-service">
+      <div className="csc-add-service">
+        <h2>Add New Service</h2>
         <input
           type="text"
-          placeholder="Name"
+          placeholder="Service Name"
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
@@ -132,7 +134,7 @@ const AdminServices = () => {
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
         />
-        <button onClick={handleAddService}>➕ Add Service</button>
+        <button className="csc-add-btn" onClick={handleAddService}>➕ Add Service</button>
       </div>
     </div>
   );

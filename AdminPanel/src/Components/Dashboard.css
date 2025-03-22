@@ -1,206 +1,227 @@
 /* General Dashboard Layout */
 .dashboard {
-    display: flex;
-    height: 100vh;
-    background: linear-gradient(135deg, #000428, #004e92);
-    font-family: "Poppins", sans-serif;
-  }
-  
-  /* Sidebar Styling */
-  .sidebar {
-    width: 260px;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .sidebar:hover {
-    width: 280px;
-  }
-  
-  /* Sidebar Logo */
-  .logo {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-  }
-  
-  /* Sidebar Menu */
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-  }
-  
-  .sidebar ul li {
-    padding: 15px 20px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 10px;
-  }
-  
-  /* Style the <Link> inside <li> */
-  .sidebar ul li a {
-    text-decoration: none;
-    color: white; /* Ensure white text */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Hover Effects */
-  .sidebar ul li:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-  }
-  
-  /* Logout Button */
-  .sidebar ul li:last-child {
-    background: rgba(255, 0, 0, 0.7);
-  }
-  
-  .sidebar ul li:last-child:hover {
-    background: rgba(255, 0, 0, 0.9);
-  }
-  
-  
-  /* Main Content */
-  .main-content {
-    flex-grow: 1;
-    padding: 30px;
-  }
-  
-  /* Dashboard Header */
-  .dashboard-header {
-    background: rgb(23, 95, 177);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-  }
-  
-  .dashboard-header h1 {
-    font-size: 26px;
-    margin-bottom: 5px;
-    color: #fff;
-  }
-  
-  .dashboard-header p {
-    font-size: 16px;
-    color: #fff;
-  }
-  
- /* Widgets Section */
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #000428, #004e92);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar:hover {
+  width: 280px;
+}
+
+/* Sidebar Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+/* Style the <Link> inside <li> */
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover Effects */
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: rgb(23, 95, 177);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.dashboard-header p {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Widgets Section */
 .dashboard-widgets {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    padding: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Widget Box */
+.widget {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+/* Widget Hover Effect */
+.widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styles */
+.widget i {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Widget Titles */
+.widget h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Widget Values */
+.widget p {
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Color Variations */
+.jobs {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+}
+.jobs i {
+  background: rgba(255, 255, 255, 0.2);
+}
+.jobs p {
+  color: white;
+}
+
+.services {
+  background: linear-gradient(135deg, #56ccf2, #2f80ed);
+}
+.services i {
+  background: rgba(255, 255, 255, 0.2);
+}
+.services p {
+  color: white;
+}
+
+.requests {
+  background: linear-gradient(135deg, #f2994a, #f2c94c);
+}
+.requests i {
+  background: rgba(255, 255, 255, 0.2);
+}
+.requests p {
+  color: white;
+}
+
+/* Logout Button */
+.logout-btn {
+  display: block;
+  padding: 12px 18px;
+  color: white;
+  text-decoration: none;
+  background-color: red;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+}
+
+.logout-btn:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-widgets {
+    flex-direction: column;
   }
-  
-  /* Widget Box */
+
   .widget {
-    flex: 1;
-    background: white;
-    padding: 25px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    font-family: "Poppins", sans-serif;
-    text-decoration: none;
+    width: 100%;
   }
-  
-  /* Widget Hover Effect */
-  .widget:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  /* Icon Styles */
-  .widget i {
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    display: inline-block;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Widget Titles */
-  .widget h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  /* Widget Values */
-  .widget p {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  /* Color Variations */
-  .jobs {
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
-  }
-  .jobs i {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  .jobs p {
-    color: white;
-  }
-  
-  .services {
-    background: linear-gradient(135deg, #56ccf2, #2f80ed);
-  }
-  .services i {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  .services p {
-    color: white;
-  }
-  
-  .requests {
-    background: linear-gradient(135deg, #f2994a, #f2c94c);
-  }
-  .requests i {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  .requests p {
-    color: white;
-  }
-  
-  /* Animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .widget {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
+}
+
+.widget {
+  animation: fadeIn 0.5s ease-in-out;
+}

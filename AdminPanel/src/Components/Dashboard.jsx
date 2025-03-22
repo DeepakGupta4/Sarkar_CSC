@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // useNavigate import kiya
 import axios from "axios";
 import "./Dashboard.css";
 
@@ -9,6 +9,8 @@ const Dashboard = () => {
     totalServices: 0,
     newRequests: 0,
   });
+
+  const navigate = useNavigate(); // Navigation ke liye useNavigate hook
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -23,6 +25,12 @@ const Dashboard = () => {
     fetchStats();
   }, []);
 
+  // 🔹 Logout Function
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Token delete kar diya
+    navigate("/admin/login"); // Redirect to login page
+  };
+
   return (
     <div className="dashboard">
       {/* Sidebar */}
@@ -34,8 +42,7 @@ const Dashboard = () => {
           <li><Link to="/admin/services">🛠 Services</Link></li>
           <li><Link to="/admin/service-request">📩 Service Requests</Link></li>
           <li><Link to="/admin/job-applications">📄 Job Applications</Link></li>
-          <li><Link to="/admin/login">🚪 Logout</Link></li>
-          
+          <li><button onClick={handleLogout} className="logout-btn">🚪 Logout</button></li>
         </ul>
       </aside>
 
@@ -52,17 +59,10 @@ const Dashboard = () => {
             <h3>Total Jobs</h3>
             <p>{stats.totalJobs}</p>
           </Link>
-
           <Link to="/admin/services" className="widget services">
             <i className="fas fa-cogs"></i>
             <h3>Total Services</h3>
             <p>{stats.totalServices}</p>
-          </Link>
-
-          <Link to="/admin/service-request" className="widget requests">
-            <i className="fas fa-bell"></i>
-            <h3>New Requests</h3>
-            <p>{stats.newRequests}</p>
           </Link>
         </section>
       </main>
