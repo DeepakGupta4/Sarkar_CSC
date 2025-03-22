@@ -63,7 +63,7 @@ const AdminJobs = () => {
     <div className="admin-container">
        
       <div className="admin-header">
-      <Link to="/" className="back-buttonn">⬅ Back to Dashboard</Link>
+      <Link to="/admin" className="back-buttonn">⬅ Back to Dashboard</Link>
         <Link to="/admin/add-job" className="add-job-button"><span>+</span> Add Job</Link>
       </div>
       <h1 className="admin-h1">Manage Jobs</h1>

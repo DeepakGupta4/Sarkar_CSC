@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require('path');
 require("dotenv").config();
 
 // Import Routes
@@ -16,6 +17,8 @@ const app = express();
 // 🔹 Middleware
 app.use(express.json());
 app.use(cors());
+
+const _dirname = path.resolve();
 
 // 🔹 Routes
 app.use("/api/auth", authRoute);
@@ -44,6 +47,18 @@ mongoose
     }
   })
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
+  app.use(express.static(path.join(_dirname, "/frontend/dist")));
+  app.use("/admin", express.static(path.join(_dirname, "/AdminPanel/dist")));
+
+  app.get("*", (req, res) => {
+    if (req.path.startsWith("/admin")) {
+      res.sendFile(path.join(__dirname, "/AdminPanel/dist/index.html"));
+    } else {
+      res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
+    }
+  });
+  
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

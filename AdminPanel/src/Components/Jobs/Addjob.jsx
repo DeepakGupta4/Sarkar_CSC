@@ -51,7 +51,7 @@ const AddJob = () => {
     <div className="add-job-container">
       <div className="add-job-card">
         {/* Close button to navigate to Dashboard */}
-        <div className="close-btn" onClick={() => navigate("/")}>✖</div>
+        <div className="close-btn" onClick={() => navigate("/admin")}>✖</div>
         
         <h2>📌 Add New Job</h2>
         <form onSubmit={handleSubmit}>

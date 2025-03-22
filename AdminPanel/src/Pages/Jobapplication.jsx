@@ -9,7 +9,7 @@ const Jobapplication = () => {
 
   return (
     <div className="job-list-container">
-      <button className="back-button" onClick={() => navigate("/")}>🔙 Back to Dashboard</button>
+      <button className="back-button" onClick={() => navigate("/admin")}>🔙 Back to Dashboard</button>
       <h2>📝 Job Listings</h2>
       <button onClick={() => navigate("/add-job", { state: { jobs, setJobs } })}>➕ Add Job</button>
       <table>

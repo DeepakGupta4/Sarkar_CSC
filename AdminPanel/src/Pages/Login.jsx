@@ -27,7 +27,7 @@ const Login = () => {
       localStorage.setItem("role", "admin");
   
       alert("Login successful!");
-      navigate("/");
+      navigate("/admin");
     } else {
       setError("Invalid email or password");
     }

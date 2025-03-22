@@ -18,7 +18,7 @@ const App = () => {
 
         {/* Protected Routes (Require Authentication) */}
         <Route
-          path="/"
+          path="/admin"
           element={
             <ProtectedRoute>
               <Dashboard />

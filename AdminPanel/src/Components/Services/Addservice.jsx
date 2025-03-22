@@ -68,7 +68,7 @@ const AdminServices = () => {
       {/* Header */}
       <div className="csc-header">
         <h1 className="csc-title">🛠️ CSC Service Management</h1>
-        <Link to="/" className="csc-back-button">⬅ Back to Dashboard</Link>
+        <Link to="/admin" className="csc-back-button">⬅ Back to Dashboard</Link>
       </div>
 
       {/* Service List */}
