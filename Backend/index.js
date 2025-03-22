@@ -48,16 +48,18 @@ mongoose
   })
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
-  app.use(express.static(path.join(_dirname, "/frontend/dist")));
-  app.use("/admin", express.static(path.join(_dirname, "/AdminPanel/dist")));
+  app.use(express.static(path.join(_dirname, "frontend/dist")));
 
-  app.get("*", (req, res) => {
-    if (req.path.startsWith("/admin")) {
-      res.sendFile(path.join(__dirname, "/AdminPanel/dist/index.html"));
-    } else {
-      res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
-    }
-  });
+// Serve Admin Panel
+app.use("/admin", express.static(path.join(_dirname, "AdminPanel/dist")));
+
+app.get("*", (req, res) => {
+  if (req.path.startsWith("/admin")) {
+    res.sendFile(path.join(_dirname, "AdminPanel/dist", "index.html"));
+  } else {
+    res.sendFile(path.join(_dirname, "frontend/dist", "index.html"));
+  }
+});
   
 
 const PORT = process.env.PORT || 5000;
