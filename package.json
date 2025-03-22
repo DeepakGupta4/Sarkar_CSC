@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon Backend/index.js",
-  "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix AdminPanel && npm run build --prefix AdminPanel",
-    "start": "nodemon Backend/index.js"
-  },
+  "build": "cd frontend && npm install && npm run build && cd ../AdminPanel && npm install && npm run build",
+  "start": "node Backend/index.js",
+  "deploy": "npm run build && npm start"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
