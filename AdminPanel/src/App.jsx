@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Components/Dashboard";
 import AddJob from "./Components/Jobs/Addjob";
 import ServiceList from "./Components/Services/Addservice";
@@ -9,16 +9,20 @@ import TotalJobs from "./Pages/TotalJob";
 import AdminJobs from "./Components/Jobs/AdminJob";
 import ProtectedRoute from "./Middleware/ProtectionRoute";
 
+
 const App = () => {
   return (
     <Router>
       <Routes>
+        {/* Default Redirect: Root "/" goes to "/admin/login" */}
+        <Route path="/" element={<Navigate to="/admin/login" replace />} />
+
         {/* Public Routes */}
         <Route path="/admin/login" element={<Login />} />
 
-        {/* Protected Routes (Require Authentication) */}
+        {/* Protected Routes */}
         <Route
-          path="/admin"
+          path="/admin/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
@@ -65,6 +69,9 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
+        {/* Fallback Route (Unknown paths redirect to login) */}
+        <Route path="*" element={<Navigate to="/admin/login" replace />} />
       </Routes>
     </Router>
   );
